@@ -1,0 +1,15 @@
+app-home {
+  > .container {
+    margin-top: 5rem;
+ }
+
+ //@include media-breakpoint-up(sm) {}
+
+
+ .postcard{
+ 	background-color: yellow;
+ 	border-radius: 1rem;
+ 	border: 0.5rem solid white;
+ }
+}
+
