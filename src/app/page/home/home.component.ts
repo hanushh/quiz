@@ -12,12 +12,13 @@ export class HomeComponent implements OnInit {
      items: FirebaseListObservable<any[]>;
 
     constructor(db: AngularFireDatabase) {
-    	this.items = db.list('/automotive-posts', {
+    	this.items = db.list('/posts', {
 		  query: {
 		    limitToLast: 10,
 		    orderByKey: true
 		  }
   		});
+
     }
 
   ngOnInit() {
