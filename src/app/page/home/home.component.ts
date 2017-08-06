@@ -5,21 +5,14 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
- // styleUrls: ['./home.component.scss']
+  // styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
-     items: FirebaseListObservable<any[]>;
 
-    constructor(db: AngularFireDatabase) {
-    	this.items = db.list('/posts', {
-		  query: {
-		    limitToLast: 10,
-		    orderByKey: true
-		  }
-  		});
+  constructor() {
 
-    }
+  }
 
   ngOnInit() {
   }

@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule }   from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { environment } from '../environments/environment';
 
+import { AuthGuard } from './guards/auth.guard';
 
 import { AppComponent } from './app.component';
 import { PostComponent } from './page/post/post.component';
@@ -14,7 +15,8 @@ import { HomeComponent } from './page/home/home.component';
 import { PostSummaryComponent } from './components/post-summary/post-summary.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 import { HeaderComponent } from './components/header/header.component';
-import { NewPostComponent } from './page/new-post/new-post.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './page/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { NewPostComponent } from './page/new-post/new-post.component';
     PostSummaryComponent,
     PageNotFoundComponent,
     HeaderComponent,
-    NewPostComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,22 +35,29 @@ import { NewPostComponent } from './page/new-post/new-post.component';
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     RouterModule.forRoot([
-		{
-			path:'',
-			component:HomeComponent
-		},
-		{
-			path:"post/:id",
-			component:PostComponent
-		},
-		{ path: '**', component: PageNotFoundComponent }
+      {
+        path: '',
+        component: HomeComponent
+      },
+      {
+        path: 'dashboard',
+        component: LoginComponent,
+        canActivate: [AuthGuard]
+      },
 
-	],      
-	//{ enableTracing: true } // <-- debugging purposes only
-	)
-    
+      {
+        path: "post/:id",
+        component: PostComponent,
+
+      },
+      { path: '**', component: PageNotFoundComponent }
+
+    ],
+     // { enableTracing: true } // <-- debugging purposes only
+    )
+
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
