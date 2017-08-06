@@ -41,7 +41,7 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
       },
       {
         path: 'dashboard',
-        component: LoginComponent,
+        component: DashboardComponent,
         canActivate: [AuthGuard]
       },
 

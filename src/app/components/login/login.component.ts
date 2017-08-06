@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
+import { CanActivate, Router } from '@angular/router';
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
 	user: Observable<firebase.User>;
 
-	constructor(public afAuth: AngularFireAuth) {
+	constructor(public afAuth: AngularFireAuth, private router: Router) {
 		this.user = afAuth.authState;
 	}
 
@@ -30,5 +31,6 @@ export class LoginComponent implements OnInit {
 	logout(empForm: any, event: Event) {
 		event.preventDefault();
 		this.afAuth.auth.signOut();
+		this.router.navigate(['/']);
 	}
 }
