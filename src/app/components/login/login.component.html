@@ -1,4 +1,12 @@
 
+
+<div *ngIf="!(user|async)">
   <button class="btn btn-outline-success my-2 my-sm-0" (click)="login(empForm, $event)">Google Login</button>
-  <button (click)="logout(empForm, $event)">Logout</button>
-<div> {{ (user | async)|json }} </div>
+
+</div>
+
+<div *ngIf="(user|async)">
+
+  <button class="btn btn-outline-success my-2 my-sm-0" (click)="logout(empForm, $event)">Logout</button>
+
+  </div>
