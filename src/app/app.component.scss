@@ -3,3 +3,9 @@
 
 @import "page/home/home.component";
 @import "page/post/post.component";
+
+
+
+app-header > .container {
+	margin-top: 5em;
+}

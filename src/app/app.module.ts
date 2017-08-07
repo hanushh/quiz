@@ -12,7 +12,6 @@ import { AuthGuard } from './guards/auth.guard';
 import { AppComponent } from './app.component';
 import { PostComponent } from './page/post/post.component';
 import { HomeComponent } from './page/home/home.component';
-import { PostSummaryComponent } from './components/post-summary/post-summary.component';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
@@ -23,7 +22,6 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
     AppComponent,
     PostComponent,
     HomeComponent,
-    PostSummaryComponent,
     PageNotFoundComponent,
     HeaderComponent,
     LoginComponent,
@@ -44,7 +42,6 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
         component: DashboardComponent,
         canActivate: [AuthGuard]
       },
-
       {
         path: "post/:id",
         component: PostComponent,
