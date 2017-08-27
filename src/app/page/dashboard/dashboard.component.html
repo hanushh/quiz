@@ -15,16 +15,16 @@
       <!-- Example row of columns -->
       <div class="row">
       
-       <!--  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 postcard" *ngFor="let item of items | async">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 postcard" *ngFor="let item of items | async">
 
           <h2><a href="#" [routerLink]="['/post', item.$key	]">{{ item.title  }}</a></h2>
 		     
- 		                 <a href="#" [routerLink]="['/post', item.$key	]">{{ item.Description  }}</a>
-
-         </div> -->
+<!--  		                 <a href="#" [routerLink]="['/post', item.$key	]">{{ item.Description  }}</a>
+ -->
+         </div>
                   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 postcard" *ngFor="let item1 of items1 | async">
 
-    		                 <a href="#" [routerLink]="['/Challenges', item1.$key	]">{{ item1.Title  }}</a>
+    		                 <a href="#" [routerLink]="['/Challenges', item1.$key ]">{{ item1.Title  }}</a>
           </div>
 
 

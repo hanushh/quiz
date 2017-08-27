@@ -24,7 +24,7 @@ export class PostComponent implements OnInit {
 
 	this.route.params.subscribe(params => {
        this.id = params['id'];
-       this.postObj = this.db.object('/automotive-posts/'+this.id);
+       this.postObj = this.db.object('/posts/'+this.id);
 
 
     });
