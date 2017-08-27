@@ -16,6 +16,7 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
+import { ChallengeComponent } from './page/challenge/challenge.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
     PageNotFoundComponent,
     HeaderComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    ChallengeComponent
   ],
   imports: [
     BrowserModule,
