@@ -47,8 +47,12 @@ import { ChallengeComponent } from './page/challenge/challenge.component';
       {
         path: "post/:id",
         component: PostComponent,
-
       },
+      {
+        path: "challenge/:id",
+        component: ChallengeComponent,
+      },
+      
       { path: '**', component: PageNotFoundComponent }
 
     ],
